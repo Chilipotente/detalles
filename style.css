@@ -1,0 +1,174 @@
+.root-font-fixed {}
+:root{
+	--spiderman-red:#DC143C;
+	--spiderman-blue:#003DA5;
+	--accent:#FF1744;
+	--muted:#6b6b6b;
+	--valentine-pink:#FFB6D9;
+	--valentine-light:#FFC0CB;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+	font-family:Poppins, system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+	background:linear-gradient(135deg,#FFB6D9,#FFE4E1,#FFC0CB);
+	background-attachment:fixed;
+	display:flex;align-items:center;justify-content:center;
+	color:#222;min-height:100vh;
+	position:relative;
+	overflow-x:hidden;
+}
+
+/* Audio - Música de fondo */
+#bgMusic{volume:0.3}
+body::before{
+	content:'';
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><defs><pattern id="web" x="0" y="0" width="400" height="400" patternUnits="userSpaceOnUse"><path d="M200 0 L200 400 M0 200 L400 200 M60 60 L340 340 M60 340 L340 60 M100 50 L300 350 M50 100 L350 300 M150 20 L250 380 M20 150 L380 250" stroke="rgba(255,255,255,0.08)" stroke-width="1" fill="none"/><circle cx="200" cy="200" r="100" stroke="rgba(255,255,255,0.08)" stroke-width="1" fill="none"/><circle cx="200" cy="200" r="75" stroke="rgba(255,255,255,0.08)" stroke-width="1" fill="none"/><circle cx="200" cy="200" r="50" stroke="rgba(255,255,255,0.08)" stroke-width="1" fill="none"/><circle cx="200" cy="200" r="25" stroke="rgba(255,255,255,0.08)" stroke-width="1" fill="none"/></pattern></defs><rect width="400" height="400" fill="url(%23web)"/></svg>');
+	background-size:400px 400px;
+	pointer-events:none;
+	z-index:0;
+}
+.wrap{
+	position:relative;
+	z-index:1;
+}
+.wrap{width:100%;max-width:900px;padding:28px}
+.screen{background:rgba(255,255,255,0.97);border-radius:20px;padding:40px;box-shadow:0 20px 60px rgba(0,0,0,0.3);text-align:center;animation:fadeIn 0.5s ease;border:3px solid var(--spiderman-red)}
+#cardScreen{background:transparent;box-shadow:none;border:none;padding:20px}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeOut{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(-20px)}}
+.hidden{display:none}
+h1{margin:0 0 15px;font-size:32px;font-weight:700;color:var(--spiderman-red);font-family:"Playfair Display",serif;text-shadow:2px 2px 4px rgba(0,61,165,0.2)}
+h2{margin:0 0 20px;font-size:24px;font-weight:600;color:var(--spiderman-red);font-family:"Playfair Display",serif}
+p{color:var(--muted);font-size:16px;line-height:1.6}
+button{border:0;border-radius:12px;font-size:16px;cursor:pointer;font-weight:600;transition:all 0.3s ease}
+button:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,0.2)}
+button:disabled{opacity:0.4;cursor:not-allowed}
+
+/* Intro Screen */
+.intro-screen{padding:20px}
+.main-title{font-size:48px;font-weight:700;color:var(--spiderman-red);text-shadow:3px 3px 6px rgba(0,61,165,0.3);margin:0 0 30px;font-family:"Playfair Display",serif;letter-spacing:2px}
+.intro-container{display:flex;gap:40px;align-items:center;justify-content:center;flex-wrap:wrap}
+.image-section{flex:1;min-width:250px}
+.intro-image{width:100%;max-width:350px;height:auto;border-radius:16px;box-shadow:0 15px 40px rgba(220,20,60,0.4);animation:float 3s ease-in-out infinite}
+.text-section{flex:1;min-width:250px;text-align:left}
+.text-section h1{text-align:left;font-size:28px}
+.text-section p{text-align:left;margin-bottom:30px}
+.primary-btn{background:linear-gradient(135deg,var(--spiderman-red),#990000);color:#fff;padding:14px 40px;font-size:18px;border-radius:10px;border:2px solid var(--spiderman-blue);transition:all 0.3s ease}
+.primary-btn:hover{transform:scale(1.05);box-shadow:0 10px 30px rgba(220,20,60,0.5)}
+
+/* Card Screen - Letter Design - Romantic Version */
+.letter-envelope{max-width:680px;margin:0 auto;background:linear-gradient(180deg,#fdf8f5 0%,#f5ede5 50%,#faf4f0 100%);padding:45px;border-radius:12px;box-shadow:0 25px 70px rgba(220,20,60,0.35),0 0 40px rgba(255,182,217,0.25);position:relative;animation:slideIn 0.7s ease;border:3px solid #D4A5A5;overflow:hidden}
+.letter-envelope::before{content:'❤️ 💕 ❤️';position:absolute;top:0;left:0;right:0;height:45px;background:linear-gradient(90deg,#FFB6D9 0%,#FFD6E8 25%,#FFC0CB 50%,#FFB6D9 75%,#FFD6E8 100%);display:flex;align-items:center;justify-content:center;font-size:20px;letter-spacing:15px;box-shadow:0 8px 15px rgba(255,182,217,0.4);border-bottom:2px solid rgba(220,20,60,0.2)}
+.letter-envelope::after{content:'';position:absolute;top:45px;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(220,20,60,0.3),transparent)}
+.letter-paper{background:linear-gradient(135deg,#fffdfb 0%,#fffcfa 50%,#fef9f7 100%);padding:60px 50px;border-radius:8px;box-shadow:inset 0 2px 12px rgba(220,20,60,0.08),inset 0 0 20px rgba(255,182,217,0.1);position:relative;animation:unfold 0.9s ease-out;margin-top:10px;max-height:450px;overflow-y:auto;overflow-x:hidden;scroll-behavior:smooth;border:1px solid rgba(255,182,217,0.3)}
+.letter-paper::before{content:'✧';position:absolute;top:20px;left:30px;font-size:20px;color:rgba(255,182,217,0.4)}
+.letter-paper::after{content:'✧';position:absolute;top:20px;right:30px;font-size:20px;color:rgba(255,182,217,0.4)}
+@keyframes unfold{from{opacity:0;transform:scaleY(0.7) perspective(1000px) rotateX(15deg)}to{opacity:1;transform:scaleY(1) perspective(1000px) rotateX(0deg)}}
+.letter-seal{position:absolute;top:-35px;right:40px;font-size:70px;animation:sealDrop 1s cubic-bezier(0.34,1.56,0.64,1);filter:drop-shadow(0 5px 12px rgba(255,182,217,0.6));z-index:10}
+@keyframes sealDrop{0%{transform:translateY(-60px) rotate(-30deg);opacity:0}70%{transform:translateY(5px) rotate(10deg)}100%{transform:translateY(0) rotate(0deg);opacity:1}}
+.letter-header{text-align:center;margin-bottom:45px;border-bottom:2px solid #FFB6D9;padding-bottom:20px;position:relative}
+.letter-header::before{content:'💕';display:block;font-size:24px;margin-bottom:10px;animation:float 3s ease-in-out infinite}
+.letter-header::after{content:'';position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);width:40px;height:6px;background:linear-gradient(90deg,#FFB6D9,#DC143C);border-radius:50%}
+.letter-header h2{color:#C2185B;font-size:32px;margin:0;font-family:"Playfair Display",serif;font-weight:700;letter-spacing:2px;text-shadow:2px 2px 6px rgba(255,182,217,0.3);font-style:italic}
+.letter-text{text-align:left;line-height:1.95;font-size:15.5px;color:#3e3e3e;margin:35px 0;font-family:"Georgia",serif;letter-spacing:0.3px}
+.letter-text p{margin:28px 0;color:#444;text-indent:40px;line-height:2;font-size:15px;letter-spacing:0.4px}
+.letter-text p:first-letter{font-size:1.3em;color:#DC143C;font-weight:700}
+.letter-footer{margin-top:50px;text-align:right;font-family:"Georgia",serif;padding-top:25px;border-top:2px dashed #FFB6D9;position:relative}
+.letter-footer::before{content:'';position:absolute;left:50%;top:-12px;transform:translateX(-50%);width:20px;height:20px;background:#FFB6D9;border-radius:50%;opacity:0.6}
+.letter-footer p{margin:8px 0;color:#666;font-size:15px}
+.letter-footer .signature{font-size:21px;color:#DC143C;font-weight:700;margin-top:20px;font-style:italic;letter-spacing:1px}
+/* Scrollbar styling */
+.letter-paper::-webkit-scrollbar{width:8px}
+.letter-paper::-webkit-scrollbar-track{background:rgba(255,182,217,0.15);border-radius:10px}
+.letter-paper::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#FFB6D9,#FFC0CB);border-radius:10px;box-shadow:0 0 6px rgba(255,182,217,0.4)}
+.letter-paper::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#DC143C,#FFB6D9)}
+
+/* Next Button */
+.next-btn{background:linear-gradient(135deg,var(--spiderman-red),#990000);color:#fff;padding:12px 35px;font-size:16px;margin-top:30px;border:2px solid var(--spiderman-blue);font-weight:700;transition:all 0.3s ease;cursor:pointer;border-radius:10px;display:block;margin-left:auto;margin-right:auto}
+.next-btn:hover{transform:translateY(-2px) scale(1.05);box-shadow:0 8px 20px rgba(220,20,60,0.6)}
+
+/* Proposal Screen */
+.proposal-card{max-width:600px;margin:0 auto;text-align:center;background:rgba(255,255,255,0.98);padding:40px;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,0.3);border-top:5px solid var(--spiderman-red);border-bottom:5px solid var(--spiderman-blue);animation:slideUp 0.6s ease}
+@keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.proposal-animation{margin:30px 0;font-size:80px}
+.floating-heart{animation:float 3s ease-in-out infinite;filter:drop-shadow(0 8px 16px rgba(220,20,60,0.5));display:inline-block}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
+.proposal-title{font-size:32px;color:var(--spiderman-red);margin:30px 0;text-shadow:2px 2px 4px rgba(0,61,165,0.15);animation:slideDown 0.7s ease}
+.buttons-container{display:flex;gap:20px;justify-content:center;margin-top:40px;flex-wrap:wrap;animation:fadeIn 0.8s ease 0.5s both}
+.yes-btn{background:linear-gradient(135deg,var(--spiderman-red),#990000);color:#fff;padding:16px 50px;font-size:18px;flex:1;min-width:200px;border:2px solid var(--spiderman-blue);font-weight:700;transition:all 0.3s ease}
+.yes-btn:hover{background:linear-gradient(135deg,#992020,#660000);box-shadow:0 8px 25px rgba(220,20,60,0.6);transform:translateY(-3px) scale(1.02)}
+.yes-btn:active{transform:translateY(-1px) scale(0.98)}
+.no-btn{background:#e0e0e0;color:#999;padding:16px 50px;font-size:18px;flex:1;min-width:200px;cursor:not-allowed;opacity:0.5;border:2px solid #ccc}
+.no-btn:disabled{cursor:not-allowed}
+
+/* Animation pulse for button click */
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
+
+/* Final Screen - Romantic Design with 2 Frames */
+#finalScreen{background:transparent;box-shadow:none;border:none;padding:20px}
+.final-frame-outer{max-width:700px;margin:0 auto;background:#f9f3e9;padding:30px;border-radius:12px;box-shadow:0 15px 50px rgba(0,0,0,0.25);border:3px solid var(--spiderman-red);position:relative;animation:slideUp 0.7s ease}
+.final-frame-outer::before{content:'';position:absolute;top:15px;left:15px;right:15px;bottom:15px;border:2px dashed var(--spiderman-blue);border-radius:8px;pointer-events:none;opacity:0.5}
+.final-frame-inner{background:linear-gradient(180deg,#fff,#fffaf5);padding:40px;border-radius:10px;text-align:center;position:relative;z-index:1;animation:fadeIn 0.8s ease 0.3s both}
+.final-title{color:var(--spiderman-red);font-size:36px;margin:0 0 20px;font-family:"Playfair Display",serif;text-shadow:2px 2px 4px rgba(220,20,60,0.2);animation:slideDown 0.7s ease 0.2s both}
+.final-heart{font-size:80px;animation:heartPulse 1.5s ease-in-out infinite;margin:20px 0;transform-origin:center;display:inline-block}
+@keyframes heartPulse{0%{transform:scale(1)}50%{transform:scale(1.2)}100%{transform:scale(1)}}
+.final-message-box{background:#fff9f5;padding:35px 30px;border-radius:10px;margin-top:20px;border-left:5px solid var(--spiderman-red);border-right:5px solid var(--spiderman-blue);animation:slideUp 0.8s ease 0.5s both;box-shadow:inset 0 2px 5px rgba(0,0,0,0.05)}
+.final-message{font-size:16px;line-height:1.8;color:#333;margin:0 0 15px;font-family:"Georgia",serif;font-style:italic}
+.final-promise{font-size:16px;line-height:1.8;color:#444;margin:0 0 25px;font-family:"Georgia",serif;font-weight:500}
+.final-message-box .signature{font-size:18px;color:var(--spiderman-red);font-weight:700;margin:0;animation:fadeIn 0.8s ease 0.7s both}
+
+/* Responsive */
+@media (max-width:1024px){
+    .wrap{max-width:92%;padding:20px}
+    .intro-image{max-width:320px}
+    .final-frame-outer{padding:24px}
+}
+
+@media (max-width:768px){
+    .wrap{padding:14px}
+    .screen{padding:18px;border:2px solid rgba(220,20,60,0.25)}
+    .intro-container{flex-direction:column;gap:18px}
+    .image-section{min-width:auto}
+    .intro-image{max-width:260px}
+    .text-section{min-width:auto}
+    .letter-envelope{padding:20px;border-radius:10px}
+    .letter-envelope::before{height:38px;font-size:16px}
+    .letter-paper{padding:28px 22px;max-height:60vh}
+    .letter-paper{border-radius:6px}
+    .letter-text{font-size:15px;line-height:1.8}
+    .letter-text p{margin:18px 0;text-indent:28px}
+    .letter-header h2{font-size:24px}
+    .letter-seal{font-size:56px;right:20px;top:-28px}
+    .next-btn{padding:10px 26px;font-size:15px}
+    .proposal-card{padding:26px;border-radius:16px}
+    .proposal-animation{font-size:64px}
+    .yes-btn,.no-btn{padding:12px 20px;font-size:16px;min-width:140px}
+    .buttons-container{flex-direction:column;gap:12px}
+    .final-frame-outer{padding:18px}
+    .final-frame-inner{padding:24px}
+    .final-title{font-size:26px}
+    .final-heart{font-size:56px}
+    .final-message-box{padding:18px}
+    h1{font-size:26px}
+    h2{font-size:18px}
+}
+
+@media (max-width:480px){
+    .wrap{padding:10px}
+    .intro-image{max-width:220px}
+    .letter-paper{max-height:55vh;padding:20px}
+    .letter-paper{-webkit-overflow-scrolling:touch}
+    .letter-text{font-size:14.5px}
+    .letter-text p{text-indent:22px}
+    .letter-seal{font-size:48px;right:14px}
+    .main-title{font-size:34px}
+    .final-title{font-size:22px}
+    .final-heart{font-size:48px}
+    .yes-btn,.no-btn{width:100%;min-width:0;min-height:48px;padding:12px 16px;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+}

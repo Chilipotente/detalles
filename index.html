@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Para Ti - San Valentín</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+	<!-- Música de fondo -->
+	<audio id="bgMusic" autoplay loop>
+		<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+	</audio>
+	<div class="wrap">
+		<!-- Pantalla de Presentación -->
+		<section id="intro" class="screen intro-screen">
+			<h1 class="main-title">Happy Valentine's Day 🕷️</h1>
+			<div class="intro-container">
+				<div class="image-section">
+					<img src="spiderman.png" alt="Corazón de Spiderman" class="intro-image">
+				</div>
+				<div class="text-section">
+					<h1>Como me estoy <br>enamorando de ti ❤️</h1>
+					<p>Espero que te guste corazón, lo hice con mucho cariño </p>
+					<button id="readLetterBtn" class="primary-btn">Siguiente</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- Pantalla de Carta -->
+		<section id="cardScreen" class="screen hidden">
+			<div class="letter-envelope">
+				<div class="letter-paper">
+					<div class="letter-seal">💕</div>
+					<div class="letter-header">
+						<h2>Mi Telaraña de Amor</h2>
+					</div>
+					<div id="letterContent" class="letter-text">
+						<p>Desde que empezó este año y te conocí, algo cambió en mí. No sé si fue tu forma de mirarme, tu sonrisa, tu forma de hablar o esa paz que transmites, pero desde el primer momento sentí que eras alguien especial.</p>
+						<p>Hemos compartido tantas cosas en tan poco tiempo, risas que se me quedaron grabadas, conversaciones sinceras sobre nuestros problemas, esos momentos simples del día que contigo se vuelven importantes. Me encanta poder contarte lo que vivo y también escucharte, sentir que estamos construyendo confianza paso a paso.</p>
+						<p>Aún recuerdo cuando fuimos al cine, o ese día que fuiste a verme jugar. Ese gesto tuyo, tu apoyo y tus palabras de ánimo significaron muchísimo para mí. Me motivas a seguir siendo mejor, a crecer y a creer más en mí mismo. No todos hacen eso, y tú lo haces sin esfuerzo.</p>
+						<p>Corazón o "mi Dori", poco a poco me estoy enamorando mas de ti. No fue algo de golpe, fue algo bonito que ha ido creciendo con cada salida, cada charla, cada momento compartido. Me gusta conocerte como pareja, descubrir quién eres realmente y sentir que esto puede seguir madurando.</p>
+						<p>Solo quería que supieras que valoro todo lo que hemos vivido hasta ahora. Gracias por tu tiempo, por tu cariño, por tu forma de ser conmigo. Y pase lo que pase, quiero seguir construyendo momentos contigo, sin prisas, pero con el corazón sincero.</p>
+					</div>
+					<div class="letter-footer">
+						<p>Con amor,</p>
+						<p class="signature">Spiderman 🕷️</p>
+					</div>
+				</div>
+			</div>
+			<button id="nextBtn" class="next-btn">Siguiente →</button>
+		</section>
+
+		<!-- Pantalla de Propuesta -->
+		<section id="proposalScreen" class="screen hidden">
+			<div class="proposal-card">
+				<div class="proposal-animation">
+					<div style="font-size: 80px;">🕷️❤️</div>
+				</div>
+				<h2 class="proposal-title">¿Quieres ser mi San Valentín?</h2>
+				<div class="buttons-container">
+					<button id="yesBtn" class="yes-btn">¡Sí! ♥</button>
+					<button id="noBtn" class="no-btn" disabled>No -_-</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- Pantalla de Mensaje Final -->
+		<section id="finalScreen" class="screen hidden">
+			<div class="final-frame-outer">
+				<div class="final-frame-inner">
+					<div class="celebration">
+						<span class="confetti">🎉</span>
+						<span class="confetti">🕷️</span>
+						<span class="confetti">❤️</span>
+						<span class="confetti">🎉</span>
+						<span class="confetti">💕</span>
+					</div>
+					<h2 class="final-title">¡Tu Héroe Nocturno!</h2>
+					<div class="final-heart">❤️</div>
+				</div>
+				<div class="final-message-box">
+					<p class="final-message">¿Estás lista para otra salida con este humilde ser que te quiere y valora cada detalle que tienes conmigo?</p>
+					<p class="final-promise">Te prometo cuidarte, como Spiderman lo hace con su ciudad, aunque en realidad mi prioridad eres tú.</p>
+					<p class="signature">Tu Spiderman salvando momentos 🕷️♥️</p>
+				</div>
+			</div>
+		</section>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>
